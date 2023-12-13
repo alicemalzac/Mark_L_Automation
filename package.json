@@ -1,0 +1,15 @@
+{
+  "name": "qaxperience",
+  "version": "1.0.0",
+  "description": "Cypress end to end project at Mark L ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "cypress": "^12.2.0"
+  }
+}
