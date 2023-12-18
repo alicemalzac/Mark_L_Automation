@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('createTask', (task = '') => { 
+
+    cy.visit('/')
+
+    cy.get('input[placeholder="Add a new Task"]').as('inputTask')
+    if (task !== '') {
+        cy.get('@inputTask')
+        .type(task)
+    }
+    cy.contains('button', 'Create').click()
+})
+
+Cypress.Commands.add('isRequired', (targetMessage) => { 
+
+    cy.get('@inputTask')
+    .invoke('prop', 'validationMessage')
+    .should((text) =>{
+      expect(
+        targetMessage
+      ).to.eq(text)
+})
+})
